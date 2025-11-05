@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大学教科書フリマ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>大学教科書フリマ</h1>
+    <nav>
+      <button id="loginBtn">ログイン</button>
+      <button id="sellBtn">出品する</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search">
+      <input type="text" id="searchBox" placeholder="教科書名や科目で検索">
+      <button id="searchBtn">検索</button>
+    </section>
+
+    <section id="bookList" class="book-list">
+      <!-- JSで出品リストを生成 -->
+    </section>
+  </main>
+
+  <!-- 出品フォーム -->
+  <div id="sellForm" class="modal hidden">
+    <div class="modal-content">
+      <h2>教科書を出品する</h2>
+      <label>教科書名: <input id="bookTitle" type="text"></label>
+      <label>価格(円): <input id="bookPrice" type="number"></label>
+      <label>説明: <textarea id="bookDesc"></textarea></label>
+      <button id="addBookBtn">出品</button>
+      <button id="closeSellForm">閉じる</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDsZsGlabCpg370trb1vK-FofsCvH13PK4",
+      authDomain: "test-50e4a.firebaseapp.com",
+      projectId: "test-50e4a",
+      storageBucket: "test-50e4a.firebasestorage.app",
+      messagingSenderId: "206117020607",
+      appId: "1:206117020607:web:2b9b8ed322276abb74b70a",
+      measurementId: "G-85H1CDV4L3"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  
+</html>
